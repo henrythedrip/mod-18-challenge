@@ -33,14 +33,14 @@ Timestamp Formatting: Optional implementation for clear and readable timestamps.
 
 Clone this repository.
 Install dependencies using npm install.
-Set up your MongoDB database and configure the connection string in the .env file.
+Set up your database and configure the connection string in the .env file.
 Run the application using npm start. 
 
 ## Usage
 
 Here is a video walk through guide of the program and how it works:
 
-[]()
+[Link to video walk thru](https://drive.google.com/file/d/1khC8kmazfT21qNunxRkYPoRnyxAF_yHr/view?usp=sharing)
 
 ## License
 
@@ -49,13 +49,7 @@ Please refer to the license badge at the top of this document.
 
 ## Sources
 
-These are the sources needed for the creation of the ecommerce database and backend system.
-
-[]()
-
-[]()
-
-[]()
+I have no sources besides the bootcamp for this project
 
 ## GitHub
 
