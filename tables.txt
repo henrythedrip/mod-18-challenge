@@ -1,0 +1,40 @@
+ (index) │      username      │                   _id                    │
+├─────────┼────────────────────┼──────────────────────────────────────────┤
+│    0    │    'Billy Bob'     │ new ObjectId('65ff5022a1f5f2f993644795') │
+│    1    │ 'Jameson Painter'  │ new ObjectId('65ff5022a1f5f2f993644796') │
+│    2    │  'Jenny Jebediah'  │ new ObjectId('65ff5022a1f5f2f993644797') │
+│    3    │   'Frank Furter'   │ new ObjectId('65ff5022a1f5f2f993644798') │
+│    4    │ 'Bartholomeu Simp' │ new ObjectId('65ff5022a1f5f2f993644799') │
+│    5    │ 'JoBack MorseHan'  │ new ObjectId('65ff5022a1f5f2f99364479a') │
+│    6    │ 'Byle Krovlovski'  │ new ObjectId('65ff5022a1f5f2f99364479b') │
+│    7    │    'Stan Smith'    │ new ObjectId('65ff5022a1f5f2f99364479c') │
+│    8    │   'Cric Eartman'   │ new ObjectId('65ff5022a1f5f2f99364479d') │
+│    9    │  'Sutters Btotch'  │ new ObjectId('65ff5022a1f5f2f99364479e') │
+└─────────┴────────────────────┴──────────────────────────────────────────┘
+┌─────────┬───────────────┬──────────────────────────────────────────┐
+│ (index) │    content    │                   _id                    │
+├─────────┼───────────────┼──────────────────────────────────────────┤
+│    0    │    'Wow!'     │ new ObjectId('65ff5022a1f5f2f9936447a0') │
+│    1    │   'Fire!!'    │ new ObjectId('65ff5022a1f5f2f9936447a1') │
+│    2    │   'Sick...'   │ new ObjectId('65ff5022a1f5f2f9936447a2') │
+│    3    │    'Dope?'    │ new ObjectId('65ff5022a1f5f2f9936447a3') │
+│    4    │    'Cool!'    │ new ObjectId('65ff5022a1f5f2f9936447a4') │
+│    5    │   'Lame :('   │ new ObjectId('65ff5022a1f5f2f9936447a5') │
+│    6    │ 'Disgusting!' │ new ObjectId('65ff5022a1f5f2f9936447a6') │
+│    7    │ 'Horrible...' │ new ObjectId('65ff5022a1f5f2f9936447a7') │
+│    8    │ 'Slamming...' │ new ObjectId('65ff5022a1f5f2f9936447a8') │
+│    9    │ 'Repulsive!!' │ new ObjectId('65ff5022a1f5f2f9936447a9') │
+└─────────┴───────────────┴──────────────────────────────────────────┘
+┌─────────┬───────────────────────────────────────────────────────────────────────────────────┬──────────────────────────────────────────┐
+│ (index) │                                      content                                      │                   _id                    │
+├─────────┼───────────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────┤
+│    0    │                          'this is really time consuming'                          │ new ObjectId('65ff5022a1f5f2f9936447ab') │
+│    1    │                         'i lack the creativity for this'                          │ new ObjectId('65ff5022a1f5f2f9936447ac') │
+│    2    │                           'asdlkjfghasldkjfghasldkjfg'                            │ new ObjectId('65ff5022a1f5f2f9936447ad') │
+│    3    │                   'i once watched a man drown and did nothing'                    │ new ObjectId('65ff5022a1f5f2f9936447ae') │
+│    4    │                             'just got some taco bell'                             │ new ObjectId('65ff5022a1f5f2f9936447af') │
+│    5    │                'ENLARGE YOUR PENIS FOR ONLY 4 PAYMENTS OF $49.95'                 │ new ObjectId('65ff5022a1f5f2f9936447b0') │
+│    6    │            'how am i supposed to see the dark net if it is all dark?'             │ new ObjectId('65ff5022a1f5f2f9936447b1') │
+│    7    │ 'google dot com hot single why dont cougars near me dont reply to my messages???' │ new ObjectId('65ff5022a1f5f2f9936447b2') │
+│    8    │                  'google dot com what is this lump in my pants'                   │ new ObjectId('65ff5022a1f5f2f9936447b3') │
+│    9    │                           'where them freaky girls at'                            │ new ObjectId('65ff5022a1f5f2f9936447b4') 
