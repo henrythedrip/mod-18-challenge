@@ -42,6 +42,10 @@ app.post('/create-user', async (req, res) => {
     res.json(result);
   });
 
+//   {
+// "username": "Jerry Berry"
+// }
+
 app.post('/create-thought/', async (req, res) => {
     // Use db connection to add a document
     const user = await User.findById(req.body.postedBy);
@@ -52,12 +56,19 @@ app.post('/create-thought/', async (req, res) => {
     res.json(result);
   });
 
-  //create a reaction
-  app.post('/create-reaction', async (req, res) => {
-    // Use db connection to add a document
-    const result = await Reaction.create(req.body);
-    res.json(result);
-});
+//   {
+//     "postedBy": "65ff67cc4cdf0fb4c9fa8ece",
+//     "content": "Here is a new thought posted by Jameson Painter"
+//   }
+
+//   //create a reaction
+//   app.post('/create-reaction', async (req, res) => {
+//     // Use db connection to add a document
+//     const result = await Reaction.create(req.body);
+//     res.json(result);
+// });
+
+
 
   // id 1 is the user and id 2 is the friend who is getting added to that user's list
   app.post('/create-friend/:id1/:id2', async (req, res) => {
@@ -67,6 +78,9 @@ app.post('/create-thought/', async (req, res) => {
     user.save()
     res.json(friend);
   });
+ 
+  // this will add jameson painter as a friend for billy bob 
+  //   --- /create-friend/65ff67cc4cdf0fb4c9fa8ecd/65ff67cc4cdf0fb4c9fa8ece/
 
 // app.post('/create-reaction', async (req, res) => {
 //     // Use db connection to add a document
@@ -103,7 +117,13 @@ app.post('/create-reaction/:thoughtId', async (req, res) => {
     }
 });
 
+// this will create a reaction to "i love to code" -- stan smith is reacting
+// -----/create-reaction/65ff6771d037f2b9c03b301e
 
+// {
+//     "postedBy": "65ff67cc4cdf0fb4c9fa8ed4",
+//     "content": "i agree entirely, coding is great"
+// }
 
 // delete a user
 app.delete('/delete-user/:id', async (req, res) => {
@@ -112,6 +132,9 @@ app.delete('/delete-user/:id', async (req, res) => {
     const result = await User.deleteOne({'_id': req.params.id})
     res.json(result);
 })
+
+// this will delete the user jerry berry
+// ---/delete-user/6602391c4881179e66c06bc5
 
 // delete a friend.. id1 is for who you are, id2 is who yu want to delete
 app.delete('/delete-friend/:id1/:id2', async (req, res) => {
@@ -145,6 +168,10 @@ app.put('/edit-thought/:id', async (req, res) => {
     res.json(thought);
 })
 
+//   {
+//     "content": "Here is an edit"
+//   }
+
 // edit a reaction
 app.put('/edit-reaction/:id', async (req, res) => {
     const reaction = await Reaction.findById(req.params.id);
@@ -152,6 +179,10 @@ app.put('/edit-reaction/:id', async (req, res) => {
     reaction.save();
     res.json(reaction);
 })
+
+//   {
+//     "content": "here we are editing a reaction"
+//   }
 
 // once we start the webserver we can't modify it so this needs to be at the bottom
 db.once('open', () => {
