@@ -82,21 +82,18 @@ app.post('/create-thought/', async (req, res) => {
 
 app.post('/create-reaction/:thoughtId', async (req, res) => {
     try {
-        // Find the thought by ID
         const thought = await Thought.findById(req.params.thoughtId);
 
         if (!thought) {
             return res.status(404).json({ error: "Thought not found" });
         }
 
-        // Create the reaction
         const reaction = await Reaction.create({
             content: req.body.content,
             postedBy: req.body.postedBy
         });
 
-        // Associate the reaction with the thought
-        thought.reactions.push(reaction._id); // Assuming reaction._id is the ID of the created reaction
+        thought.reactions.push(reaction._id); 
         await thought.save();
 
         res.status(201).json({ thought, reaction });
