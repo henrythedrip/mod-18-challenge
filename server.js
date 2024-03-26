@@ -68,17 +68,45 @@ app.post('/create-thought/', async (req, res) => {
     res.json(friend);
   });
 
-app.post('/create-reaction', async (req, res) => {
-    // Use db connection to add a document
-    const thought = await Thought.findById(req.body.thoughtId);
-    const result = await Reaction.create({ 
-        content: req.body.content, 
-        postedBy: req.body.postedBy 
-    });
-    thought.reactions.push(result.id);
-    thought.save();
-    res.json(result);
+// app.post('/create-reaction', async (req, res) => {
+//     // Use db connection to add a document
+//     const thought = await Thought.findById(req.body.thoughtId);
+//     const result = await Reaction.create({ 
+//         content: req.body.content, 
+//         postedBy: req.body.postedBy 
+//     });
+//     thought.reactions.push(result.id);
+//     thought.save();
+//     res.json(result);
+// });
+
+app.post('/create-reaction/:thoughtId', async (req, res) => {
+    try {
+        // Find the thought by ID
+        const thought = await Thought.findById(req.params.thoughtId);
+
+        if (!thought) {
+            return res.status(404).json({ error: "Thought not found" });
+        }
+
+        // Create the reaction
+        const reaction = await Reaction.create({
+            content: req.body.content,
+            postedBy: req.body.postedBy
+        });
+
+        // Associate the reaction with the thought
+        thought.reactions.push(reaction._id); // Assuming reaction._id is the ID of the created reaction
+        await thought.save();
+
+        res.status(201).json({ thought, reaction });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
 });
+
+
 
 // delete a user
 app.delete('/delete-user/:id', async (req, res) => {
@@ -127,8 +155,6 @@ app.put('/edit-reaction/:id', async (req, res) => {
     reaction.save();
     res.json(reaction);
 })
-
-
 
 // once we start the webserver we can't modify it so this needs to be at the bottom
 db.once('open', () => {
